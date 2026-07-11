@@ -46,4 +46,4 @@ async function query(userQuery) {
   console.log(`LLM Response:`, llmResponse.choices[0].message.content);
 }
 
-query('what are the Video Conferencing Technologies ?');
+query('what is Cloud Transcoding');

@@ -8,9 +8,7 @@ const filePath = "./rag/internal-doc.pdf";
 
 async function indexDocument() {
   try {
-    const loader = new PDFLoader(filePath, {
-      splitPages: false,
-    });
+    const loader = new PDFLoader(filePath);
 
     const docs = await loader.load();
 
