@@ -23,7 +23,6 @@ async function query(userQuery) {
   // get simialr vectors and chunks?
   const vectorRetriver = vectorStore.asRetriever({ k: 5 });
   const results = await vectorRetriver.invoke(userQuery);
-  console.log(results[0]);
   
   // feed those chunks to llm model and do a simple chat with {userQuery}
   const SYSTEM_PROMPT = `
