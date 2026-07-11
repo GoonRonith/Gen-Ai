@@ -16,7 +16,10 @@ async function indexDocument() {
 
         const document = texts.map((text, index) => ({
             pageContent: text,
-            metadata: { source: `page_${index + 1}` }
+            metadata: { 
+                source: `page_${index + 1}`,
+                bookName: doc[0].metadata
+         }
         }))
 
         // Initalize the embedding model
@@ -34,9 +37,8 @@ async function indexDocument() {
         );
         await vectorStore.addDocuments(document);
 
-        console.log(`All the documents are indexed....`);
+        console.log(`All the documents are stored into qdrant vector db and indexded....`);
 
-        // console.log(documents);
     } catch (error) {
         console.log(error);
 
